@@ -1,3 +1,5 @@
 FROM node:7.7.1
 
-RUN npm install leveldown
+
+  
+RUN npm install -g leveldown
