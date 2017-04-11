@@ -13,8 +13,8 @@ options = bcoin.config({
   config: true,
   arg: true,
   env: true,
-  logLevel: 'debug',
-  logFile: true,
+  logLevel: 'info',
+  logFile: false,
   db: 'leveldb',
   listen: true
 });
@@ -36,7 +36,7 @@ process.on('uncaughtException', function(err) {
 co.spawn(function *() {
   yield node.open();
   yield node.connect();
-  node.startSync();
+  // node.startSync();
 }).catch(function(err) {
   throw err;
 });
