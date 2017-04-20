@@ -33,8 +33,12 @@ process.on('uncaughtException', function(err) {
   process.exit(1);
 });
 
+var fs = require('fs')
 var n = process.argv[2];
+var chain = JSON.parse(fs.readFileSync(`${rootDir}/data-${n}.json`))
+
 console.log('NNNNNNNNNNNNNNNNNNNNNNNUMBER ', n)
+console.log(chain)
 
 co.spawn(function *() {
   yield node.open();
