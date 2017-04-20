@@ -19,9 +19,20 @@ options = bcoin.config({
   listen: true
 });
 
+var rootDir = './data'
+var fs = require('fs')
+var n = process.argv[2];
+var unparsedChain = JSON.parse(fs.readFileSync(`${rootDir}/data-${n}.json`))
+var keys = Object.keys(unparsedChain)
+var hashes = keys.map(k => Buffer.from(k, 'hex'))
+var chain = keys.map(k => Buffer.from(unparsedChain[k] , 'hex')) 
+var map = {}
+
+keys.forEach((h, i) => map[h] = chain[i])
+
 bcoin.set(options);
 
-node = new bcoin.foonode(options);
+node = new bcoin.foonode({options, chain, hashes, map});
 
 node.on('error', function(err) {
   ;
@@ -33,17 +44,11 @@ process.on('uncaughtException', function(err) {
   process.exit(1);
 });
 
-var fs = require('fs')
-var n = process.argv[2];
-var chain = JSON.parse(fs.readFileSync(`${rootDir}/data-${n}.json`))
-
-console.log('NNNNNNNNNNNNNNNNNNNNNNNUMBER ', n)
-console.log(chain)
-
 co.spawn(function *() {
   yield node.open();
   yield node.connect();
-  // node.startSync();
+  node.startSync();
 }).catch(function(err) {
   throw err;
 });
+

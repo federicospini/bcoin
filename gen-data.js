@@ -16,22 +16,33 @@ const n = 16
 const min = 30
 const max = 80
 
-function generateOneFile (i) {
+function generateOneFile (number, data) {
   var height = (((max - min) * Math.random()) + min) | 0
+  var keys = Object.keys(data)
   var output = {}
+  var i
+
+  for (i = 0; i < height; i += 1) {
+    output[keys[i]] = data[keys[i]]
+  }
+
+  fs.writeFileSync(`${rootDir}/data-${number}.json`, JSON.stringify(output, ' ', 2))
+}
+
+function generate () {
+  // generate data
+  var height = max
+  var data = {}
 
   while (height--) {
     let bytes = randomBytes(ticketSize)
     let hash = sha256(bytes)
-    output[hash.toString('hex')] = bytes.toString('hex')
+    data[hash.toString('hex')] = bytes.toString('hex')
   }
 
-  fs.writeFileSync(`${rootDir}/data-${i}.json`, JSON.stringify(output, ' ', 2))
-}
 
-function generate () {
   for (var i = 0; i < n; i += 1) {
-    generateOneFile(i)
+    generateOneFile(i, data)
   }
 }
 
