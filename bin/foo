@@ -47,7 +47,7 @@ process.on('uncaughtException', function(err) {
 co.spawn(function *() {
   yield node.open();
   yield node.connect();
-  node.startSync();
+  // node.startSync();
 }).catch(function(err) {
   throw err;
 });

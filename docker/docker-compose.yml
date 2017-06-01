@@ -15,7 +15,7 @@ services:
     volumes:
       - "../:/usr/src/bcoin"
     working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 1
+    command: ./bin/bcoin 8
   
   bcoin_seed2:
     image: node
@@ -25,27 +25,27 @@ services:
     volumes:
       - "../:/usr/src/bcoin"
     working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 2
+    command: ./bin/bcoin 9
 
-  bcoin_seed3:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.13
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 3
+  # bcoin_seed3:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.13
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 3
   
-  bcoin_seed4:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.14
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 4
+  # bcoin_seed4:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.14
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 4
   
   bcoin_peer1:
     image: node
@@ -87,125 +87,126 @@ services:
     working_dir: /usr/src/bcoin
     command: ./bin/bcoin 4
 
-  bcoin_peer5:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.105
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 5
-  
-  bcoin_peer6:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.106  
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 6
-  
-  bcoin_peer7:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.107
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 7
-  
-  bcoin_peer8:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.108
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 8 
+  # bcoin_peer5:
+  #   image: node
 
-  bcoin_peer9:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.109
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 9
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.105
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 5
   
-  bcoin_peer10:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.110  
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 10
+  # bcoin_peer6:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.106  
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 6
+  
+  # bcoin_peer7:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.107
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 7
+  
+  # bcoin_peer8:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.108
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 8 
 
-  bcoin_peer11:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.111
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 11
+  # bcoin_peer9:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.109
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 9
   
-  bcoin_peer12:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.112
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 12
+  # bcoin_peer10:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.110  
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 10
 
-  bcoin_peer13:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.113
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 13
+  # bcoin_peer11:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.111
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 11
   
-  bcoin_peer14:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.114  
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 14
+  # bcoin_peer12:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.112
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 12
+
+  # bcoin_peer13:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.113
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 13
   
-  bcoin_peer15:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.115
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 15
+  # bcoin_peer14:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.114  
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 14
   
-  bcoin_peer16:
-    image: node
-    networks:
-      bcoin_net:
-        ipv4_address: 172.25.0.116
-    volumes:
-      - "../:/usr/src/bcoin"
-    working_dir: /usr/src/bcoin
-    command: ./bin/bcoin 16
+  # bcoin_peer15:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.115
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 15
+  
+  # bcoin_peer16:
+  #   image: node
+  #   networks:
+  #     bcoin_net:
+  #       ipv4_address: 172.25.0.116
+  #   volumes:
+  #     - "../:/usr/src/bcoin"
+  #   working_dir: /usr/src/bcoin
+  #   command: ./bin/bcoin 16
 
   # bcoin_peer17:
   #   image: node
