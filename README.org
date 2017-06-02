@@ -1,0 +1,20 @@
+* P2P
+
+* getx (array range) es: [(10,20),(30,30)] 2K max 
+* tx -> response
+* utxo (i): chiede l'utxo set dato un certo i
+* reject: non conosco i di un utxo (possibile ban)
+* inv -> response (uguale a tx), ad altezza i -> coppia (i_tx,i)
+
+( se non risponde il loader, cambia loader)
+(da lista tx ti ricostruisci utxo set)
+
+* Lavoro sul codice
+** Test1: Esempio hardcoded -> sync dei node, 80 hardcoded, tutti devono arrivare a 80 -> synced
+** Test2: Due tipi di nodi, uno synced, lista non synced
+   - quello synced (uno solo) e quello non synced (in docker),
+   - quelli syncato fatto il broadcast random (all'inizio uno solo) (ogni secondo per esempio)
+   - gli altri si devono syncare al valore dinamico
+** Test 3: set synced lista nodi, synced lista
+   - lista di comandi da fare
+   
